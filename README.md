@@ -39,7 +39,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Completing the stretch goals effectively (always encountered errors)
 
 ## Open-source libraries used
 
