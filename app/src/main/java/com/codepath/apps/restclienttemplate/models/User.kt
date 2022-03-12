@@ -11,8 +11,8 @@ class User {
     companion object{
         fun fromJSon(jsonObject: JSONObject): User{
             val user = User()
-            var name = jsonObject.getString("name")
-            user.screenName = jsonObject.getString("screen_name")
+            user.name = jsonObject.getString("name")
+            user.screenName = "@" + jsonObject.getString("screen_name")
             user.publicImageUrl = jsonObject.getString("profile_image_url_https")
             return user
         }
