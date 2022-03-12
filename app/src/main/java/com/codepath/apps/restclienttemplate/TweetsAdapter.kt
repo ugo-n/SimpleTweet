@@ -8,6 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.codepath.apps.restclienttemplate.models.Tweet
+import android.text.format.DateUtils
+
+
+
 
 class TweetsAdapter(val tweets: ArrayList<Tweet>) :  RecyclerView.Adapter<TweetsAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TweetsAdapter.ViewHolder {
@@ -57,4 +61,6 @@ class TweetsAdapter(val tweets: ArrayList<Tweet>) :  RecyclerView.Adapter<Tweets
         val tvScreenName = itemView.findViewById<TextView>(R.id.tvScreenName)
         val tvCreatedAt = itemView.findViewById<TextView>(R.id.tvCreatedAt)
     }
+
+
 }
