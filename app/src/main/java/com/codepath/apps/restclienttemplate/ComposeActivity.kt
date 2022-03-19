@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.codepath.apps.restclienttemplate.models.Tweet
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -15,7 +16,6 @@ class ComposeActivity : AppCompatActivity() {
 
     lateinit var etCompose: EditText
     lateinit var btnTweet: Button
-
     lateinit var client: TwitterClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,6 @@ class ComposeActivity : AppCompatActivity() {
 
         etCompose = findViewById(R.id.etTweetCompose)
         btnTweet = findViewById(R.id.btnTweet)
-
         client = TwitterApplication.getRestClient(this)
 
         //Handling the user's click on the tweet button
@@ -38,8 +37,8 @@ class ComposeActivity : AppCompatActivity() {
                     .show()
             } else
             //2. Make sure tweet is under character count
-            if(tweetContent.length > 140){
-                Toast.makeText(this, "Tweet is too long! Limit is 140 characters", Toast.LENGTH_SHORT)
+            if(tweetContent.length > 280){
+                Toast.makeText(this, "Tweet is too long! Limit is 280 characters", Toast.LENGTH_SHORT)
                     .show()
             } else {
                 client.publishTweet(tweetContent, object : JsonHttpResponseHandler(){
